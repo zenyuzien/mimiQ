@@ -6,4 +6,14 @@ Completely written in vanilla cpp from scratch.
 Actively working on it.
 
 started working on 3rd March.
-from 8th march'24, will update the whole source codes ( as long as they are small enough as a single file ) on github every now and then ( degree of days )
+I will post the whole source code by _DATE_ on github every now and then. 
+
+maybe after few months, I will have only one source code folder, and will update that regularly.
+
+
+some stuff about this project: 
+
+inspired from qiskit - python package
+will use GUI in future for visualisations
+will use parallel programming or threading in future for more realistic mimicing
+will make it focused on easy-to-use style of functions
