@@ -1,0 +1,131 @@
+// not now 
+
+// come back later 
+
+
+/*
+int main()
+{
+
+    // from drawing circuit
+    
+    Circuit qc ;
+    qc.printQ();
+    qc.mimiQ() ;
+    qc.sv[qc.nQ -1].print();
+    
+    return 0 ;
+}*/
+
+
+/*
+replace the control bit segments of matrix with identity matrix .
+
+for 4x4 matrix when control bit: 1st qbit 
+
+    replace 
+    [0][0] [0][1] 
+    [1][0] [1][1] 
+    with Identity matrix == diagnol matrix of all 1's 
+
+     00      01     10    11 
+00 [0][0] [0][1] [0][2] [0][3] 
+01 [1][0] [1][1] [1][2] [1][3] 
+10 [2][0] [2][1] [2][2] [2][3] 
+11 [3][0] [3][1] [3][2] [3][3] 
+
+for 8x8 matrix when control bit is 2nd qbit 
+
+    replace the submatrices with indentity matrices 
+    
+    [2][2] [2][3]
+    [3][2] [3][3]
+    with Identity 
+    
+    [2][6] [2][7]
+    [3][6] [3][7]
+    with Identity
+    
+    [6][2] [6][3]
+    [7][2] [7][3]
+    with Identity
+    
+    [6][6] [6][7]
+    [7][6] [7][7]
+    with Identity
+    
+     000     001    010    011    100    101   110    111
+000 [0][0] [0][1] [0][2] [0][3] [0][4] [0][5] [0][6] [0][7] 
+001 [1][0] [1][1] [1][2] [1][3] [1][4] [1][5] [1][6] [1][7] 
+010 [2][0] [2][1] [2][2] [2][3] [2][4] [2][5] [2][6] [2][7] 
+011 [3][0] [3][1] [3][2] [3][3] [3][4] [3][5] [3][6] [3][7] 
+100 [4][0] [4][1] [4][2] [4][3] [4][4] [4][5] [4][6] [4][7] 
+101 [5][0] [5][1] [5][2] [5][3] [5][4] [5][5] [5][6] [5][7] 
+110 [6][0] [6][1] [6][2] [6][3] [6][4] [6][5] [6][6] [6][7] 
+111 [7][0] [7][1] [7][2] [7][3] [7][4] [7][5] [7][6] [7][7] 
+
+nah dude, the above logic fails. we are yet to discover the actual logic
+*/
+
+1 h 
+2 x 
+3 y 
+4 z 
+
+5 u3  
+6 iu3 
+7 u1  
+8 u2
+
+applyGate('h', '1')
+    1 
+    target qbit 
+    1/2/3/4
+
+applyGate('u3', '1', {0.3,0.2,0.1} )
+    1
+    target qbit
+    5/6/7/8 
+    index of euler_container
+
+applyControlledGate('h', 'c0', 'q0' )
+    0-2             2
+    1-1/2/4         2
+    2-c/q 0/1       0
+    3-c-bit         0
+    4-targetqbit    0
+
+applyControlledGate('u', 'c0', 'q0', {0.3,0.2,0.1} ) // todo
+    0-2 
+    1-5/6/7/8
+    2-c/q 0/1
+    3-c-bit 
+    4-targetqbit
+
+
+measure(0,0)
+
+    4 
+    measure qbit 
+    to cbit 
+
+4 
+0 hard rest / 1 state = base .
+
+
+
+
+after lunch, do ssa-2 work, it'll take least time.
+then, setup quantum surface
+then code it. 
+
+evenig, flutter.
+
+
+
+\[
+\Qcircuit @C=1em @R=1em {
+& \gate{H} & \ctrl{1} & \qw & \ctrl{1}  \\
+& \qw & \targ & \qw & \gate{X} \\
+}
+\]
