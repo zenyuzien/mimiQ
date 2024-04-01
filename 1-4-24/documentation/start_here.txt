@@ -1,0 +1,5 @@
+MimiQ++
+
+To learn how to use the library, refer 'guide' folder
+
+To understand the structures and low-level mechancis, refer '
