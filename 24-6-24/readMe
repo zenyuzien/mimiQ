@@ -1,0 +1,40 @@
+To run the command `pdflatex -output-directory=<dir_path> <latexFilename> > nul 2>&1` successfully on a system, several requirements must be met. Here is a formal list of requirements and considerations:
+
+### System Requirements:
+
+1. **TeX Distribution**:
+
+   - A TeX distribution such as TeX Live, MiKTeX, or MacTeX must be installed on the system.
+   - The `pdflatex` executable must be included in the installation.
+
+2. **Environment Path**:
+
+   - The directory containing the `pdflatex` executable must be included in the system's PATH environment variable. This allows the command to be run from any directory without specifying the full path to the executable.
+
+### Platform Considerations:
+
+1. **Windows**:
+
+   - The command as provided (`> nul 2>&1`) is suitable for Windows systems to suppress output.
+
+2. **Unix-like Systems (Linux, macOS)**:
+   - The command needs to be modified to use `/dev/null` instead of `nul` for suppressing output: `> /dev/null 2>&1`.
+
+### Command Execution:
+
+1. **Shell Execution**:
+   - The command should be executed in a shell that supports redirection operators (`> nul 2>&1` for Windows and `> /dev/null 2>&1` for Unix-like systems).
+
+### Example Command:
+
+For Windows:
+
+```cmd
+pdflatex -output-directory=C:\path\to\output document.tex > nul 2>&1
+```
+
+For Unix-like systems:
+
+```bash
+pdflatex -output-directory=/path/to/output document.tex > /dev/null 2>&1
+```
