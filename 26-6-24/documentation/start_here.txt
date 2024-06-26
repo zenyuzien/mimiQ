@@ -1,0 +1,19 @@
+MimiQ++
+
+main components: 
+
+Experiment(): intended to be a place where every operation is replicable by QASM, I mean, it would be practically possible to transpile into QASM.
+Exception: mimiqHandler instance is used which is for UI/UX purpose.
+
+Lab(): this is where I expect the users to use c++ functions if they wish. Dealing with the aftermath of quantum simulation
+
+
+qiskit's problems
+1.
+when if conditon is applied 
+if random.randint(0, 10) == 1:
+    qc.x(q[0])
+for all shots, the ORDER is same as 1st shot
+
+2.
+acess classical bits anytime with mimiq

@@ -1,0 +1,192 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{datetime}
+\usepackage{qcircuit}
+\usepackage{amsmath}
+\begin{document}
+\noindent
+\text{mimiQ++ report - \today\ \currenttime} 
+
+\clearpage
+\begin{figure}[htbp]
+\[
+\Qcircuit @C=1em @R=.7em {
+\lstick{q0} & \gate{U(0.3,0.2,0.1)} & \qw & \ctrl{1} & \gate{H} & \meter & \qw & \qw & \qw & \qw & \qw & \\ 
+\lstick{q1} & \gate{H} & \ctrl{1} & \gate{X} & \qw & \qw \cwx & \meter & \qw & \qw & \qw & \qw & \\ 
+\lstick{q2} & \qw & \gate{X} & \qw & \qw & \qw \cwx & \qw \cwx & \gate{X} & \gate{Z} & \meter & \qw & \\ 
+\lstick{c0} & \cw & \cw & \cw & \cw & \cw \cwx & \cw \cwx & \cw \cwx & \control \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c1} & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \control \cw \cwx & \cw & \cw \cwx & \cw & \\ 
+\lstick{c2} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \cw & \\ 
+}
+\]
+\caption{quantum teleportation 1}
+\end{figure}
+
+
+
+
+
+
+\text{Classical register readings (left to right, c0 least significant) for the simulation:} 
+
+
+
+
+
+000: 277
+
+
+001: 4
+
+
+010: 223
+
+
+011: 2
+
+
+100: 256
+
+
+101: 4
+
+
+110: 253
+
+
+111: 5
+
+
+
+
+\clearpage
+\begin{figure}[htbp]
+\[
+\Qcircuit @C=1em @R=.7em {
+\lstick{q0} & \gate{U(6.28,0.408,2.22)} & \qw & \ctrl{1} & \gate{H} & \meter & \qw & \qw & \qw & \qw & \qw & \qw & \\ 
+\lstick{q1} & \gate{H} & \ctrl{1} & \gate{X} & \qw & \qw \cwx & \meter & \qw & \qw & \qw & \qw & \qw & \\ 
+\lstick{q2} & \qw & \gate{X} & \qw & \qw & \qw \cwx & \qw \cwx & \gate{X} & \gate{Z} & \gate{U(-6.28,-2.22,-0.408)} & \meter & \qw & \\ 
+\lstick{c0} & \cw & \cw & \cw & \cw & \cw \cwx & \cw \cwx & \cw \cwx & \control \cw \cwx & \cw & \cw \cwx & \cw & \\ 
+\lstick{c1} & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \control \cw \cwx & \cw & \cw & \cw \cwx & \cw & \\ 
+\lstick{c2} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \cw & \\ 
+}
+\]
+\caption{quantum teleportation ibm}
+\end{figure}
+
+
+
+
+
+
+\text{Classical register readings (left to right, c0 least significant) for the simulation:} 
+
+
+
+
+
+000: 258
+
+
+010: 266
+
+
+100: 267
+
+
+110: 233
+
+
+
+
+\clearpage
+\begin{figure}[htbp]
+\[
+\Qcircuit @C=1em @R=.7em {
+\lstick{q0} & \gate{X} & \meter & \gate{X} & \gate{H} & \ctrl{1} & \gate{Z} & \gate{X} & \ctrl{1} & \gate{H} & \meter & \qw & \qw & \\ 
+\lstick{q1} & \qw & \qw \cwx & \qw & \qw & \gate{X} & \qw \cwx & \qw \cwx & \gate{X} & \qw & \qw \cwx & \meter & \qw & \\ 
+\lstick{c0} & \cw & \cw \cwx & \cw & \cw & \cw & \cw \cwx & \control \cw \cwx & \cw & \cw & \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c1} & \cw & \cw \cwx & \cw & \cw & \cw & \control \cw \cwx & \cw & \cw & \cw & \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c2} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c3} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \cw & \cw & \\ 
+}
+\]
+\caption{superdense coding}
+\end{figure}
+
+
+
+
+
+
+\text{Classical register readings (left to right, c0 least significant) for the simulation:} 
+
+
+
+
+
+0101: 1024
+
+
+
+
+\clearpage
+\begin{figure}[htbp]
+\[
+\Qcircuit @C=1em @R=.7em {
+\lstick{q0} & \gate{H} & \qw & \qw & \qw & \qw & \ctrl{1} & \gate{Z} & \gate{X} & \ctrl{1} & \gate{H} & \meter & \qw & \qw & \\ 
+\lstick{q1} & \qw & \qw & \qw & \qw & \qw & \gate{X} & \qw \cwx & \qw \cwx & \gate{X} & \qw & \qw \cwx & \meter & \qw & \\ 
+\lstick{q2} & \gate{H} & \meter & \gate{X} & \gate{H} & \meter & \qw & \qw \cwx & \qw \cwx & \qw & \qw & \qw \cwx & \qw \cwx & \qw & \\ 
+\lstick{c0} & \cw & \cw \cwx & \control \cw \cwx & \cw & \cw \cwx & \cw & \cw \cwx & \control \cw \cwx & \cw & \cw & \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c1} & \cw & \cw & \cw & \cw & \cw \cwx & \cw & \control \cw \cwx & \cw & \cw & \cw & \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c2} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c3} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \cw & \cw & \\ 
+}
+\]
+\caption{superdense coding - random}
+\end{figure}
+
+
+
+
+
+
+\text{Classical register readings (left to right, c0 least significant) for the simulation:} 
+
+
+
+
+
+0000: 271
+
+
+0101: 259
+
+
+1010: 243
+
+
+1111: 251
+
+
+
+
+\clearpage
+\begin{figure}[htbp]
+\[
+\Qcircuit @C=1em @R=.7em {
+\lstick{q0} & \qw & \qw & \qw & \gate{X} & \qw & \qw & \qw & \gate{H} & \qw & \qw & \qw & \qw & \qw & \meter & \qw & \\ 
+\lstick{q1} & \gate{H} & \meter & \gate{X} & \qw \cwx & \gate{H} & \meter & \gate{X} & \qw \cwx & \gate{H} & \meter & \gate{X} & \gate{H} & \meter & \qw \cwx & \qw & \\ 
+\lstick{c0} & \cw & \cw \cwx & \control \cw \cwx & \control \cw \cwx & \cw & \cw \cwx & \cw \cwx & \cw \cwx & \cw & \cw \cwx & \cw \cwx & \cw & \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c1} & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \control \cw \cwx & \control \cw \cwx & \cw & \cw \cwx & \cw \cwx & \cw & \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c2} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \cw \cwx & \cw & \cw \cwx & \cw \cwx & \cw & \\ 
+\lstick{c3} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \cw \cwx & \cw & \cw & \cw \cwx & \cw & \\ 
+\lstick{c4} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw \cwx & \control \cw \cwx & \cw & \cw & \cw & \cw & \\ 
+\lstick{c5} & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \cw & \\ 
+}
+\]
+\caption{BB98-ptcl QKD}
+\end{figure}
+Resultant key: 10100010001110101011000101110101111111101001010010
+
+\end{document}
